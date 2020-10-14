@@ -1,9 +1,11 @@
 FROM golang:1.13 AS builder
 
-RUN apt-get update && apt-get -y install upx && go get -u github.com/sethvargo/go-githubactions/...
+RUN apt-get update && apt-get -y install upx 
 
-ENV GO111MODULE=on CGO_ENABLED=0
-
+#RUN mkdir -p $GOPATH/src/github.com/DTherHtun/google-chat-action
+#ADD . $GOPATH/src/github.com/DTherHtun/google-chat-action
+RUN go get -u github.com/sethvargo/go-githubactions/...
+ENV CGO_ENABLED=0
 COPY . .
 
 RUN go build \
@@ -13,7 +15,7 @@ RUN go build \
   -installsuffix cgo \
   -tags netgo \
   -o /bin/google-chat-action \
-  .
+  . 
 
 RUN strip /bin/google-chat-action
 
