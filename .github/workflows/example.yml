@@ -9,7 +9,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Hello world
-      run: echo Hello world $FIRST_NAME $middle_name $Last_Name! $GITHUB_EVENT_NAME $GITHUB_REF $GITHUB_REPOSITORY
+      run: echo Hello world $FIRST_NAME $middle_name $Last_Name! $GITHUB_EVENT_NAME $GITHUB_REF $GITHUB_REPOSITORY $GITHUB_SHA
       env:
         FIRST_NAME: Mona
         middle_name: The
