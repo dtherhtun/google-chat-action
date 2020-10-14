@@ -14,7 +14,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Chat Setup
-      uses: DTherHtun/google-chat-action@v0.2
+      uses: DTherHtun/google-chat-action@v0.3
       with:
         msg: ${GITHUB_REF}
         webhook: "https://chat.googleapis.co....."
