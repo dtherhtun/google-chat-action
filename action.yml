@@ -1,0 +1,14 @@
+name: 'Google Chat Action'
+author: 'D Ther Htun'
+description: 'Github actions for google chat Room Bot'
+inputs:
+  msg: 
+    description: 'Github Event Number'
+    required: true
+  webhook:
+    description: 'Google Chat Webhook URL'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
