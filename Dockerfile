@@ -1,6 +1,6 @@
 FROM golang:1.13 AS builder
 
-RUN apt-get update && apt-get -y install upx
+RUN apt-get update && apt-get -y install upx && go get -u github.com/sethvargo/go-githubactions/...
 
 ENV GO111MODULE=on CGO_ENABLED=0
 
