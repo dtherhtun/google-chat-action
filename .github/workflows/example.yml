@@ -1,0 +1,17 @@
+name: Sample Testing
+on: [push]
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Chat Setup
+      uses: DTherHtun/google-chat-action@v0.1
+      with:
+        msg: ${GITHUB_REF}
+        webhook: "https://chat.googleapis.com/v1/spaces/AAAAzPcAy4s/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=MmdzluicdrdkyUAV_QwB6BzlLcIhbfrwNzxVrEllaec%3D&threadKey=git-commit"
+
+
