@@ -14,7 +14,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker.pkg.github.com/dtherhtun/google-chat-action/google-chat-action:v0.6'
   args:
     - ${{ inputs.project }}
     - ${{ inputs.commit }}

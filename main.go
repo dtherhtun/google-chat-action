@@ -57,7 +57,7 @@ func main() {
                                         "text": "Job Details",
                                         "onClick": {
                                             "openLink": {
-                                                "url": "https://github.com/DTherHtun/web-app-flux/runs/%s"
+                                                "url": "https://github.com/%s"
                                             }
                                         }
                                     }
