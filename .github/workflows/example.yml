@@ -11,7 +11,7 @@ jobs:
     - run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
       id: slug
     - name: Chat Setup
-      uses: DTherHtun/google-chat-action@v0.7
+      uses: DTherHtun/google-chat-action@v0.8
       with:
         project: ${{ github.repository }}
         commit: ${{ steps.slug.outputs.sha8 }}
