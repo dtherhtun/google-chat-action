@@ -16,5 +16,9 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.msg }}
+    - ${{ inputs.project }}
+    - ${{ inputs.commit }}
+    - ${{ inputs.branch }}
+    - ${{ inputs.status }}
+    - ${{ inputs.actionid }}
     - ${{ inputs.webhook }}
