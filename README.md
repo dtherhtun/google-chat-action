@@ -14,7 +14,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Chat Setup
-      uses: DTherHtun/google-chat-action@v0.5
+      uses: DTherHtun/google-chat-action@v0.6
       with:
         project: ${{ github.repository }}
         commit: ${{ github.sha }}

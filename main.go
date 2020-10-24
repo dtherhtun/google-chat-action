@@ -10,23 +10,23 @@ import (
 
 func main() {
 	project := githubactions.GetInput("project")
-	if msg == "" {
+	if project == "" {
 		githubactions.Fatalf("Missing input 'project'")
 	}
 	commit := githubactions.GetInput("commit")
-        if msg == "" {
+        if commit == "" {
                 githubactions.Fatalf("Missing input 'commit'")
         }
 	branch := githubactions.GetInput("branch")
-        if msg == "" {
+        if branch == "" {
                 githubactions.Fatalf("Missing input 'branch'")
         }
 	status := githubactions.GetInput("status")
-        if msg == "" {
+        if status == "" {
                 githubactions.Fatalf("Missing input 'status'")
         }
 	actionid := githubactions.GetInput("actionid")
-        if msg == "" {
+        if actionid == "" {
                 githubactions.Fatalf("Missing input 'actionid'")
         }
 	webhook := githubactions.GetInput("webhook")
@@ -35,7 +35,7 @@ func main() {
 	}
 
 	fmt.Println("URL:> ", webhook)
-	data = `{
+	data := `{
     "cards": [
         {
             "header": {
