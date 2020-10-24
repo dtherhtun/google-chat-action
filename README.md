@@ -1,6 +1,8 @@
 # google-chat-action
 
-Sample
+![githaub-action google-chat](./google-chat-action.png)
+
+Sample Usage:
 
 ```yaml
 name: Sample Testing
