@@ -19,6 +19,4 @@ jobs:
         branch: ${{ github.ref }}
         status: ${{ job.status }}
         actionid: ${{ github.repository }}/actions/runs/${{ github.run_id }}
-        webhook: "https://chat.googleapis.com/v1/spaces/AAAAzPcAy4s/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=MmdzluicdrdkyUAV_QwB6BzlLcIhbfrwNzxVrEllaec%3D&threadKey=git-commit"
-
-
+        webhook: "https://chat.googleapis.com/v1/spaces/AAAAYTX-Vqs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Iwtvo1dwg36dZgUyrUCREQGGMrO71PkIoQGafOf17Yg%3D&threadKey=git-commit"

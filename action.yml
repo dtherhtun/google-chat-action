@@ -5,8 +5,20 @@ branding:
   icon: 'paperclip'
   color: 'blue'
 inputs:
-  msg: 
-    description: 'Github Event Number'
+  project: 
+    description: 'Github Project Name'
+    required: true
+  commit:
+    description: 'Github Commit ID'
+    required: true
+  branch:
+    description: 'Github Branch'
+    required: true
+  status:
+    description: 'Github Action Build Status'
+    required: true
+  actionid:
+    description: 'Current Running Action ID'
     required: true
   webhook:
     description: 'Google Chat Webhook URL'
