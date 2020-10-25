@@ -11,6 +11,7 @@ jobs:
     - run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
       id: slug
     - name: Chat Setup
+      if: ${{ always() }}
       uses: DTherHtun/google-chat-action@v0.8
       with:
         project: ${{ github.repository }}
