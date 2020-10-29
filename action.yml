@@ -2,8 +2,8 @@ name: 'Google Chat Action'
 author: 'D Ther Htun'
 description: 'Github actions for google chat Room Bot'
 branding:
-  icon: 'paperclip'
-  color: 'blue'
+  icon: 'at-sign'
+  color: 'green'
 inputs:
   project: 
     description: 'Github Project Name'
