@@ -1,8 +1,8 @@
 FROM golang:1.18 AS builder
 
-ENV CGO_ENABLED=0 \
-  GOOS=linux \
-  GOARCH=amd64
+ENV CGO_ENABLED=0
+ENV GOOS=linux
+ENV GOARCH=amd64
 
 RUN apt-get -qq update && \
   apt-get -yqq install upx
@@ -16,9 +16,9 @@ RUN go build \
   -o /bin/app \
   .
 
-# RUN strip /bin/app
 RUN upx -q -9 /bin/app
 
+# Final image
 FROM scratch
 
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
