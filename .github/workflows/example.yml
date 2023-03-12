@@ -1,11 +1,11 @@
-name: Sample Testing
+name: Send notification to Google chat
 on: [push]
 
 jobs:
-  my_job:
+  send_notification:
     runs-on: ubuntu-latest
     steps:
       - name: Google Chat Action for Github Pull Request Reviews
-        uses: MattNotarangelo/PR-review-google-chat-action@v0.0.0
+        uses: MattNotarangelo/PR-review-google-chat-action@v0.0.1
         with:
           webhook: "https://chat.googleapis.com/v1/spaces/AAAAsuwCCuQ/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=YIIweNCcTvTmNy0pqJ8og16xtORgfQBTKqlaMEELHPE%3D"
