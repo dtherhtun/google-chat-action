@@ -1,7 +1,8 @@
 FROM golang:1.18 AS builder
 
 ENV CGO_ENABLED=0 \
-  GOOS=linux
+  GOOS=linux \
+  GOARCH=amd64
 
 RUN apt-get -qq update && \
   apt-get -yqq install upx
@@ -15,7 +16,7 @@ RUN go build \
   -o /bin/app \
   .
 
-RUN strip /bin/app
+# RUN strip /bin/app
 RUN upx -q -9 /bin/app
 
 FROM scratch
