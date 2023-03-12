@@ -1,5 +1,8 @@
-docker build -t tmp .
+# Build image
+docker build -t mattnotarangelo/google-chat-action-github-pr-review .
 
-docker tag tmp:latest mattnotarangelo/google-chat-action-github-pr-review:latest
-
+# Push to docker hub. Make sure you're logged in
 docker push mattnotarangelo/google-chat-action-github-pr-review:latest
+
+# Clean up
+docker image rm mattnotarangelo/google-chat-action-github-pr-review
