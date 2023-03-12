@@ -15,8 +15,8 @@ func generateTemplate(ghc *gh.GitHubContext) []byte {
         "cards": [
             {
                 "header": {
-                    "title": "GitHub Action",
-                    "subtitle": "Build Job",
+                    "title": "Code review requested on",
+                    "subtitle": "",
                     "imageUrl": "https://github.githubassets.com/images/modules/logos_page/Octocat.png",
                     "imageStyle": "IMAGE"
                 },
@@ -74,6 +74,7 @@ func sendMessage(webhook string, data []byte) error {
 }
 
 func main() {
+
 	githubContext, err := gh.Context()
 	if err != nil {
 		panic(err)
@@ -84,8 +85,9 @@ func main() {
 	if webhook == "" {
 		gh.Fatalf("Missing input 'webhook'")
 	}
-
 	fmt.Println("URL:> ", webhook)
+
+	fmt.Printf("%#v", githubContext)
 
 	data := generateTemplate(githubContext)
 	err = sendMessage(webhook, data)
