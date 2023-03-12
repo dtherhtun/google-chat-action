@@ -1,8 +1,26 @@
-FROM golang:1.13
+FROM golang:1.18 AS builder
+
+ENV CGO_ENABLED=0 \
+  GOOS=linux
+
+RUN apt-get -qq update && \
+  apt-get -yqq install upx
 
 WORKDIR /src
 COPY . .
 
-RUN go get -u github.com/sethvargo/go-githubactions/... && go build -o /bin/google-chat-action
+RUN go build \
+  -trimpath \
+  -ldflags "-s -w -extldflags '-static'" \
+  -o /bin/app \
+  .
 
-ENTRYPOINT ["/bin/google-chat-action"]
+RUN strip /bin/app
+RUN upx -q -9 /bin/app
+
+FROM scratch
+
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+COPY --from=builder /bin/app /app
+
+ENTRYPOINT ["/app"]
